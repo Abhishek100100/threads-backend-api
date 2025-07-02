@@ -1,4 +1,7 @@
 package com.threads_api.threads_api.repository;
 
-public class LikeRepository {
+import com.threads_api.threads_api.model.Like;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface LikeRepository extends JpaRepository<Like, Long> {
 }
