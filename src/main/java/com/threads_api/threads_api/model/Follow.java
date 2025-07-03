@@ -2,6 +2,8 @@ package com.threads_api.threads_api.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "follows")
 public class Follow {
@@ -16,6 +18,15 @@ public class Follow {
     @ManyToOne
     @JoinColumn(name = "following_id", nullable = false)
     private User following;
+    private LocalDateTime createdAt;
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
 
     // --- Getters and Setters ---
     public Long getId() { return id; }
