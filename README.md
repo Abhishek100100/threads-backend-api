@@ -30,6 +30,12 @@ I wanted to make something that’s not only functional, but also easy for anyon
 ![Swagger UI](screenshots/swagger-ui.jpg)
 *Auto-generated, interactive API documentation with Swagger UI—explore and test every endpoint right in your browser.*
 
+## 4. Database Schema (ER Diagram)
+![ER Diagram](screenshots/er-diagram.jpg)
+*This diagram shows the relationships between all tables in the Threads API backend*
+
+
+
 - **Java 17**
 - **Spring Boot 3**
 - **Spring Data JPA**
