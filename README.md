@@ -18,10 +18,17 @@ I wanted to make something that’s not only functional, but also easy for anyon
 
 ## Screenshots
 
-### 1. Interactive API Docs (Swagger UI)
-![Swagger UI](screenshots/swagger-ui.png API Call in Postman
-![Postman Users](screenshots/postman-users.png Compose Running the Full Stack
-![Docker Compose](screenshots/docker-compose.png Schema Diagram
+### 1. Docker Compose Running the Full Stack
+![Docker Compose Running](screenshots/docker-desktop.jpg)
+*Both the backend and PostgreSQL database running smoothly in Docker Desktop, with live logs showing app startup and database activity.*
+
+### 2. Example API Call in Postman
+![Postman Get Users](screenshots/postman-users.jpg)
+*Testing the `/users` endpoint in Postman, confirming the API returns real user data.*
+
+### 3. Interactive API Docs (Swagger UI)
+![Swagger UI](screenshots/swagger-ui.jpg)
+*Auto-generated, interactive API documentation with Swagger UI—explore and test every endpoint right in your browser.*
 
 - **Java 17**
 - **Spring Boot 3**
