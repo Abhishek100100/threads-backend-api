@@ -1,7 +1,7 @@
 {
   "info": {
-    "name": "Threads API",
-    "description": "CRUD endpoints for Users, Posts, Comments, Likes, Follows",
+    "name": "Threads API (Final, No Nulls)",
+    "description": "Robust CRUD endpoints for Users, Posts, Comments, Likes, Follows with correct relationships. All POST/PUT bodies require valid IDs.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -84,7 +84,7 @@
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"content\": \"This is my first post!\"\n}"
+              "raw": "{\n  \"content\": \"This is my first post!\",\n  \"user\": { \"id\": 1 }\n}"
             },
             "url": { "raw": "http://localhost:8080/posts", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["posts"] }
           }
@@ -96,7 +96,7 @@
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"content\": \"Updated content!\"\n}"
+              "raw": "{\n  \"content\": \"Updated content!\",\n  \"user\": { \"id\": 1 }\n}"
             },
             "url": { "raw": "http://localhost:8080/posts/1", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["posts", "1"] }
           }
@@ -137,7 +137,7 @@
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"content\": \"Great post!\"\n}"
+              "raw": "{\n  \"content\": \"Great post!\",\n  \"user\": { \"id\": 1 },\n  \"post\": { \"id\": 1 }\n}"
             },
             "url": { "raw": "http://localhost:8080/comments", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["comments"] }
           }
@@ -149,7 +149,7 @@
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"content\": \"Updated comment!\"\n}"
+              "raw": "{\n  \"content\": \"Updated comment!\",\n  \"user\": { \"id\": 1 },\n  \"post\": { \"id\": 1 }\n}"
             },
             "url": { "raw": "http://localhost:8080/comments/1", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["comments", "1"] }
           }
@@ -190,7 +190,7 @@
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": {
               "mode": "raw",
-              "raw": "{ }"
+              "raw": "{\n  \"user\": { \"id\": 1 },\n  \"post\": { \"id\": 1 }\n}"
             },
             "url": { "raw": "http://localhost:8080/likes", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["likes"] }
           }
@@ -231,7 +231,7 @@
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "body": {
               "mode": "raw",
-              "raw": "{ }"
+              "raw": "{\n  \"follower\": { \"id\": 1 },\n  \"following\": { \"id\": 2 }\n}"
             },
             "url": { "raw": "http://localhost:8080/follows", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["follows"] }
           }

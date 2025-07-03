@@ -13,7 +13,13 @@ public class Comment {
     private String content;
     private LocalDateTime createdAt;
 
-    // Add other fields and relationships as needed
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "post_id", nullable = false)
+    private Post post;
 
     // --- Getters and Setters ---
     public Long getId() { return id; }
@@ -24,4 +30,10 @@ public class Comment {
 
     public LocalDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+
+    public User getUser() { return user; }
+    public void setUser(User user) { this.user = user; }
+
+    public Post getPost() { return post; }
+    public void setPost(Post post) { this.post = post; }
 }
